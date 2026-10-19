@@ -2,6 +2,16 @@
 
 The site is static. Anything that can serve files will host it.
 
+## Cloudflare Workers (production)
+
+If the project was created as a **Worker** (Cloudflare's default for new
+projects) rather than Pages, `wrangler.jsonc` points the upload at `dist/`.
+In the Worker's **Settings → Build**, set the build command below and leave
+the deploy command as `npx wrangler deploy`. Without the build command the
+upload would include `.git`, whose pack file exceeds the 25 MiB asset limit.
+The `name` in `wrangler.jsonc` must match the Worker's name in the dashboard.
+`_headers` and `404.html` work the same way as on Pages.
+
 ## Cloudflare Pages (production)
 
 Live at `https://www.topstaginganddesign.com`. The domain is registered at
