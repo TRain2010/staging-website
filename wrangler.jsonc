@@ -3,7 +3,7 @@
 // Docker files, docs — is never uploaded. "name" must match the Worker's name
 // in the Cloudflare dashboard.
 {
-  "name": "staging-website",
+  "name": "topstaging",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./dist",
