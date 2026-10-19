@@ -1,0 +1,25 @@
+.git
+.gitignore
+
+# Docs and build tooling are not part of the served site
+README.md
+DEPLOYMENT.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Editors
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp

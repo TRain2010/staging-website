@@ -1,0 +1,55 @@
+services:
+  staging-website:
+    build: .
+    container_name: staging-website
+    ports:
+      - "8080:8080"  # Map host port 8080 to container port 8080
+    restart: unless-stopped
+
+    # Security options
+    security_opt:
+      - no-new-privileges:true
+
+    # Resource limits to prevent abuse
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+
+    # Read-only root filesystem for extra security
+    read_only: true
+
+    # Temporary file systems for nginx runtime
+    tmpfs:
+      - /var/cache/nginx:uid=101,gid=101
+      - /tmp:uid=101,gid=101
+
+    # Network isolation
+    networks:
+      - staging-network
+
+    # Health check
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  staging-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
