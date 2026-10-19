@@ -8,6 +8,9 @@ Dockerfile
 docker-compose.yml
 .dockerignore
 
+# Raw walkthrough footage; the site serves the cut reel in media/
+Videos
+
 # Editors
 .vscode
 .idea

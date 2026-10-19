@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://train2010.github.io/staging-website/sitemap.xml
+Sitemap: https://www.topstaginganddesign.com/sitemap.xml

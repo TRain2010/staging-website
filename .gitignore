@@ -13,3 +13,9 @@ Thumbs.db
 *.log
 *.tmp
 *.temp
+
+# Raw walkthrough footage; the site serves the cut reel in media/
+Videos/
+
+# Cloudflare Pages build output
+dist/

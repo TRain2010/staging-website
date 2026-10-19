@@ -47,6 +47,40 @@
     setNav(false);
   }
 
+  /* ------------------------------------------------------ hero video */
+  // Plays only when the visitor has not asked for reduced motion, pauses
+  // while scrolled out of view, and can always be paused by hand.
+  const video = $(".hero__video");
+  const toggle = $(".hero__toggle");
+  if (video && toggle) {
+    let held = calm;                    // true once the visitor wants it still
+    const mark = () => {
+      const still = video.paused;
+      toggle.setAttribute("aria-pressed", String(still));
+      toggle.setAttribute("aria-label", still ? "Play background video" : "Pause background video");
+    };
+    const play = () => { const p = video.play(); if (p) p.catch(mark); };
+
+    if (held) video.pause();            // autoplay may already have started it
+    video.addEventListener("play", mark);
+    video.addEventListener("pause", mark);
+    toggle.hidden = false;
+    toggle.addEventListener("click", () => {
+      held = !video.paused;
+      if (held) video.pause(); else play();
+    });
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) video.pause();
+        else if (!held) play();
+      }, { threshold: 0.15 }).observe(video);
+    } else if (!held) {
+      play();
+    }
+    mark();
+  }
+
   /* ------------------------------------------------ gallery + filter */
   const gallery = $("#gallery");
   if (gallery) {
@@ -142,7 +176,7 @@
       return ok;
     };
 
-    const fields = $$("input, select, textarea", form).filter((el) => el.type !== "hidden");
+    const fields = $$("input, select, textarea", form).filter((el) => el.type !== "hidden" && el.name !== "botcheck");
 
     fields.forEach((el) => {
       el.addEventListener("blur", () => validate(el));
@@ -151,8 +185,12 @@
       });
     });
 
-    form.addEventListener("submit", (e) => {
+    const submit = $('button[type="submit"]', form);
+    const failed = $("#form-err");
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      if (failed) failed.hidden = true;
       if (fields.map(validate).includes(false)) {
         const bad = fields.find((el) => fieldOf(el)?.getAttribute("data-invalid") === "true");
         bad?.focus();
@@ -160,9 +198,28 @@
         return;
       }
 
-      // No backend is wired up yet — see README for how to connect one.
-      console.info("Consultation request (not sent):", Object.fromEntries(new FormData(form).entries()));
+      // Post to Web3Forms and only claim success once it confirms delivery.
+      const label = submit.textContent;
+      submit.disabled = true;
+      submit.textContent = "Sending\u2026";
+      let ok = false;
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+        });
+        ok = res.ok && (await res.json()).success === true;
+      } catch { ok = false; }
+      submit.disabled = false;
+      submit.textContent = label;
 
+      if (!ok) {
+        if (failed) { failed.hidden = false; failed.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "center" }); }
+        return;
+      }
+
+      form.reset();
       form.hidden = true;
       const sent = $("#sent");
       if (sent) { sent.hidden = false; sent.focus(); }

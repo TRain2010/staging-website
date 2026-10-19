@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Top Staging And Design</title>
 <meta name="description" content="Book a free 30-minute staging consultation in Seattle or on the Eastside. Tell us about the property and we will come back with a fixed quote within one business day.">
-<link rel="canonical" href="https://train2010.github.io/staging-website/contact.html">
+<link rel="canonical" href="https://www.topstaginganddesign.com/contact">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Top Staging And Design">
 <meta property="og:title" content="Contact — Top Staging And Design">
 <meta property="og:description" content="Book a free 30-minute staging consultation in Seattle or on the Eastside. Tell us about the property and we will come back with a fixed quote within one business day.">
-<meta property="og:url" content="https://train2010.github.io/staging-website/contact.html">
-<meta property="og:image" content="https://train2010.github.io/staging-website/images/projects/seattle-04.jpg">
+<meta property="og:url" content="https://www.topstaginganddesign.com/contact">
+<meta property="og:image" content="https://www.topstaginganddesign.com/images/projects/seattle-04.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#17120e" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/InstrumentSerif-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/InstrumentSans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css">
-<script src="js/main.js" defer></script>
+<link rel="preload" href="fonts/CormorantGaramond-500-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Manrope-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=62c5ef06">
+<script src="js/main.js?v=265fa495" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -35,12 +35,11 @@
     <nav class="nav" id="nav" aria-label="Primary">
       <ul class="nav__list">
         <li><a class="nav__link" href="index.html">Home</a></li>
-        <li><a class="nav__link" href="about.html">Studio</a></li>
         <li><a class="nav__link" href="services.html">Pricing</a></li>
-        <li><a class="nav__link" href="portfolio.html">Work</a></li>
+        <li><a class="nav__link" href="portfolio.html">Projects</a></li>
         <li><a class="nav__link" href="contact.html" aria-current="page">Contact</a></li>
       </ul>
-      <a class="btn" href="contact.html">Book a consult</a>
+      <a class="btn" href="contact.html">Book a free consultation</a>
     </nav>
   </div>
 </header>
@@ -56,10 +55,15 @@
 </section>
 
 <section class="sec sec--half">
-  <div class="wrap">
-    <div class="cols cols--flip">
+  <div class="wrap wrap--slim">
       <div>
-        <form class="form" id="contact-form" novalidate>
+        <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <!-- Web3Forms delivers each request to the inbox the key was created
+               for. The key is public by design; it can only send to that inbox. -->
+          <input type="hidden" name="access_key" value="ef1e10eb-7656-4cd2-bb28-2e5c56e83247">
+          <input type="hidden" name="subject" value="New consultation request — topstaginganddesign.com">
+          <input type="hidden" name="from_name" value="Top Staging And Design website">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
           <div class="f">
             <label for="name">Full name <i aria-hidden="true">*</i></label>
             <input id="name" name="name" type="text" autocomplete="name" required minlength="2">
@@ -113,28 +117,17 @@
           </div>
           <div class="f f--wide">
             <button class="btn" type="submit" style="align-self:start">Send request</button>
+            <p class="form__err" id="form-err" role="alert" hidden>We couldn't send your request just now. Please try again, or email <a href="mailto:service@topstaginganddesign.com">service@topstaginganddesign.com</a>.</p>
             <p class="small muted" style="margin-top:var(--sp-3)">We reply within one business day. Your details are never shared or sold.</p>
+            <p class="small muted">Prefer email? Write to <a href="mailto:service@topstaginganddesign.com">service@topstaginganddesign.com</a>.</p>
           </div>
         </form>
 
         <div class="sent" id="sent" role="status" tabindex="-1" hidden>
           <b>Thank you — your request is in.</b>
-          <p>We'll be in touch within one business day to arrange the walkthrough. If it's urgent, call <a href="tel:+15551234567">(555) 123-4567</a>.</p>
+          <p>We'll be in touch within one business day to arrange the walkthrough.</p>
         </div>
       </div>
-
-      <aside class="panel">
-        <h2 class="h3">Other ways to reach us</h2>
-        <dl class="defs" style="margin-top:var(--sp-5)">
-          <div><dt>Email</dt><dd><a href="mailto:service@topstaginganddesign.com">service@topstaginganddesign.com</a></dd></div>
-          <div><dt>Phone</dt><dd><a href="tel:+15551234567">(555) 123-4567</a></dd></div>
-          <div><dt>Studio hours</dt><dd>Mon&ndash;Fri 09:00&ndash;18:00<br>Sat 10:00&ndash;16:00</dd></div>
-          <div><dt>Showroom</dt><dd>By appointment only</dd></div>
-          <div><dt>Coverage</dt><dd>Seattle, the Eastside, and the communities around them</dd></div>
-        </dl>
-        <p class="small muted" style="margin-top:var(--sp-5)">Working to a listing deadline? Call rather than email — we hold a small number of rush install slots each week.</p>
-      </aside>
-    </div>
   </div>
 </section>
 
@@ -147,15 +140,11 @@
     <div class="faq" style="margin-top:var(--sp-8)">
       <details>
         <summary>How much does staging cost?</summary>
-        <div><p>We price by area, so you pay for the rooms you stage rather than a package. An entry starts at $200, a living area runs $1,500&ndash;$2,200, a primary suite with its bath $950&ndash;$1,400. A whole house across all sixteen areas lands between $10,400 and $15,700; a smaller listing staged in four or five areas is nearer $4,000. The <a href="services.html">full schedule</a> lists every area and what each one includes.</p></div>
+        <div><p>We price by area, so you pay for the rooms you stage rather than a package. A living area runs $1,050&ndash;$1,550, a primary suite with its bath $950&ndash;$1,400. The <a href="services.html">full schedule</a> lists every area and what each one includes.</p></div>
       </details>
       <details>
         <summary>How quickly can you stage a property?</summary>
         <div><p>Most homes are installed within 72 hours of you approving the plan, and the install itself takes one day. Large estates take two. We keep a few rush slots open each week for listings on a hard deadline.</p></div>
-      </details>
-      <details>
-        <summary>Do I have to move out?</summary>
-        <div><p>No. Occupied staging is built for people still living in the house — we work with what you own, add pieces from our inventory, and reset the rooms before each open house.</p></div>
       </details>
       <details>
         <summary>Is staging really worth it?</summary>
@@ -167,7 +156,7 @@
       </details>
       <details>
         <summary>Do you serve my area?</summary>
-        <div><p>We cover Seattle, the north end, and the Eastside — Bellevue, Clyde Hill, Medina, Kirkland, Redmond, Sammamish, and Issaquah. Send the address and we'll confirm; anything further out is quoted with travel included.</p></div>
+        <div><p>Yes. We serve Seattle, the Eastside, and all the neighboring areas.</p></div>
       </details>
     </div>
   </div>
@@ -186,9 +175,8 @@
       <div>
         <h3>Explore</h3>
         <ul>
-          <li><a href="about.html">Studio</a></li>
           <li><a href="services.html">Pricing</a></li>
-          <li><a href="portfolio.html">Work</a></li>
+          <li><a href="portfolio.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -197,7 +185,7 @@
         <ul>
           <li><a href="services.html#living">Living areas</a></li>
           <li><a href="services.html#primary">Primary suites</a></li>
-          <li><a href="services.html#kitchen">Kitchen &amp; baths</a></li>
+          <li><a href="services.html#kitchen">Kitchen</a></li>
           <li><a href="services.html#patio">Outdoor areas</a></li>
         </ul>
       </div>
@@ -205,8 +193,6 @@
         <h3>Get in touch</h3>
         <address>
           <a href="mailto:service@topstaginganddesign.com">service@topstaginganddesign.com</a>
-          <a href="tel:+15551234567">(555) 123-4567</a>
-          <span>Mon&ndash;Fri 9&ndash;6 &middot; Sat 10&ndash;4</span>
         </address>
       </div>
     </div>

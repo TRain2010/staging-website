@@ -2,6 +2,35 @@
 
 The site is static. Anything that can serve files will host it.
 
+## Cloudflare Pages (production)
+
+Live at `https://www.topstaginganddesign.com`. The domain is registered at
+GoDaddy; the site itself is hosted on Cloudflare Pages.
+
+1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**,
+   pick `TRain2010/staging-website`.
+2. Production branch: `master`. Framework preset: **None**.
+3. Build command:
+
+   ```
+   mkdir -p dist && cp -r *.html _headers favicon.svg robots.txt sitemap.xml css js fonts images media dist/
+   ```
+
+   Build output directory: `dist`. Copying only the site files keeps the
+   README, Docker files, and raw footage off the public site.
+4. Deploy, then check the `*.pages.dev` preview.
+5. **Custom domains → Set up a domain** → `www.topstaginganddesign.com`.
+   Cloudflare shows the DNS record to add; in GoDaddy's DNS settings add a
+   CNAME `www` → `<project>.pages.dev`. To send the bare domain to `www`, use
+   GoDaddy's domain forwarding (301 to `https://www.topstaginganddesign.com`),
+   or move the nameservers to Cloudflare and add the apex there too.
+6. HTTPS is issued automatically once DNS resolves.
+
+Every push to `master` redeploys. `_headers` carries the same security and
+cache headers as `nginx.conf`; keep the two in step. Pages serves each page
+without its `.html` suffix (`/services`), which is what the canonical URLs and
+`sitemap.xml` use; the relative `.html` links still work and redirect.
+
 ## GitHub Pages
 
 The repository is already on GitHub, so publishing is a settings change:
@@ -50,15 +79,15 @@ healthcheck.
 year), the custom 404, and this content security policy:
 
 ```
-default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';
-font-src 'self'; img-src 'self' data:; base-uri 'self'; form-action 'self';
+default-src 'self'; connect-src 'self' https://api.web3forms.com;
+script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self';
+img-src 'self' data:; base-uri 'self'; form-action 'self' https://api.web3forms.com;
 frame-ancestors 'self'; object-src 'none'
 ```
 
-Every source is `'self'`: the site loads nothing from a third party, fonts
-included. `'unsafe-inline'` is needed for style attributes only — there are no
-inline scripts. `form-action 'self'` will block a third-party form endpoint, so
-widen it if you wire the contact form to Formspree or similar.
+The site loads nothing from a third party, fonts included; the one outside
+origin is Web3Forms, which the contact form posts to. `'unsafe-inline'` is
+needed for style attributes only — there are no inline scripts.
 
 Careful when editing: **any `add_header` inside a `location` block silently
 drops the server-level headers**, which is why the cache rules use `expires`.
@@ -76,7 +105,7 @@ directory is the repository root. Set the 404 document to `404.html`.
 ## Pre-launch checklist
 
 - [ ] Replace the placeholder contact details, address, and social links
-- [ ] Point the contact form at a real backend (see README)
+- [ ] Put the Web3Forms access key in `contact.html` and send a test request
 - [ ] Swap in your own photography and update every `alt` to match
 - [ ] Update the canonical/OG URLs, `robots.txt`, and `sitemap.xml`
 - [ ] Confirm the statistics and testimonials are ones you can stand behind

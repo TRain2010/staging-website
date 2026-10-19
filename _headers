@@ -1,0 +1,22 @@
+# Cloudflare Pages response headers — the same policy nginx.conf sets for the
+# Docker image. Keep the two in step. The contact form posts to Web3Forms,
+# hence connect-src and form-action.
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; connect-src 'self' https://api.web3forms.com; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'self'; form-action 'self' https://api.web3forms.com; frame-ancestors 'self'; object-src 'none'
+
+# Filenames are not fingerprinted: stylesheet and script revalidate on every
+# load, photographs, video and fonts cache for a year.
+/css/*
+  Cache-Control: no-cache
+/js/*
+  Cache-Control: no-cache
+/images/*
+  Cache-Control: public, max-age=31536000
+/media/*
+  Cache-Control: public, max-age=31536000
+/fonts/*
+  Cache-Control: public, max-age=31536000

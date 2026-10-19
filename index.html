@@ -5,47 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Top Staging And Design — Home Staging in Seattle &amp; the Eastside</title>
 <meta name="description" content="Area-based home staging for listings across Seattle, Bellevue, Kirkland, Redmond, Sammamish, Issaquah, and Bothell. You pay for the areas you stage. Free consultation.">
-<link rel="canonical" href="https://train2010.github.io/staging-website/index.html">
+<link rel="canonical" href="https://www.topstaginganddesign.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Top Staging And Design">
 <meta property="og:title" content="Top Staging And Design — Home Staging in Seattle &amp; the Eastside">
 <meta property="og:description" content="Area-based home staging for listings across Seattle, Bellevue, Kirkland, Redmond, Sammamish, Issaquah, and Bothell. You pay for the areas you stage. Free consultation.">
-<meta property="og:url" content="https://train2010.github.io/staging-website/index.html">
-<meta property="og:image" content="https://train2010.github.io/staging-website/images/hero.jpg">
+<meta property="og:url" content="https://www.topstaginganddesign.com/">
+<meta property="og:image" content="https://www.topstaginganddesign.com/images/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#17120e" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/InstrumentSerif-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/InstrumentSans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css">
-<script src="js/main.js" defer></script>
+<link rel="preload" href="fonts/CormorantGaramond-500-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Manrope-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="images/hero-poster.jpg" as="image" fetchpriority="high">
+<link rel="stylesheet" href="css/style.css?v=62c5ef06">
+<script src="js/main.js?v=265fa495" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   "name": "Top Staging And Design",
   "description": "Area-based home staging and property styling for listings across Seattle and the Eastside.",
-  "url": "https://train2010.github.io/staging-website/",
-  "image": "https://train2010.github.io/staging-website/images/hero.jpg",
-  "logo": "https://train2010.github.io/staging-website/images/logo.png",
-  "telephone": "+1-555-123-4567",
+  "url": "https://www.topstaginganddesign.com/",
+  "image": "https://www.topstaginganddesign.com/images/hero.jpg",
+  "logo": "https://www.topstaginganddesign.com/images/logo.png",
   "email": "service@topstaginganddesign.com",
-  "priceRange": "$200 - $15700",
   "foundingDate": "2015",
   "areaServed": ["Seattle", "Bellevue", "Clyde Hill", "Kirkland", "Redmond", "Sammamish", "Issaquah", "Bothell", "Shoreline"],
-  "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "addressCountry": "US" },
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00" }
-  ],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127" }
+  "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "addressCountry": "US" }
 }
 </script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="head-bar" data-stuck="false">
+<header class="head-bar head-bar--over" data-stuck="false">
   <div class="wrap wrap--wide head-bar__in">
     <a class="brand" href="index.html">
       <img src="images/logo.png" alt="Top Staging And Design" width="221" height="168" fetchpriority="high">
@@ -57,31 +51,40 @@
     <nav class="nav" id="nav" aria-label="Primary">
       <ul class="nav__list">
         <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
-        <li><a class="nav__link" href="about.html">Studio</a></li>
         <li><a class="nav__link" href="services.html">Pricing</a></li>
-        <li><a class="nav__link" href="portfolio.html">Work</a></li>
+        <li><a class="nav__link" href="portfolio.html">Projects</a></li>
         <li><a class="nav__link" href="contact.html">Contact</a></li>
       </ul>
-      <a class="btn" href="contact.html">Book a consult</a>
+      <a class="btn" href="contact.html">Book a free consultation</a>
     </nav>
   </div>
 </header>
 <main id="main">
 
 <section class="hero">
-  <div class="wrap wrap--wide">
+  <div class="hero__media">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg" aria-hidden="true">
+      <!-- Large and high-density screens get the native 1440p cut; everything
+           else, phones included, gets 1080p. AV1 first, H.264 for the rest. -->
+      <source src="media/hero-1440.av1.mp4" type="video/mp4; codecs=av01.0.12M.08" media="(min-width: 1600px), (min-width: 1100px) and (min-resolution: 1.5dppx)">
+      <source src="media/hero-1440.mp4" type="video/mp4" media="(min-width: 1600px), (min-width: 1100px) and (min-resolution: 1.5dppx)">
+      <source src="media/hero-1080.av1.mp4" type="video/mp4; codecs=av01.0.08M.08">
+      <source src="media/hero-1080.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap wrap--wide hero__in">
     <span class="eyebrow">Staging &middot; Design &middot; Luxe</span>
     <h1 class="d1">Rooms that make a buyer stop <em>and stay</em></h1>
-    <p class="lead hero__sub">We style listings across Seattle and the Eastside so people walk in and start measuring for their own furniture. That is the whole job.</p>
+    <p class="lead hero__sub">We style each Seattle and Eastside listing around its own architecture, light, and likely buyer — never one look for every house — so it shows as more valuable and more inviting.</p>
     <div class="btns">
-      <a class="btn" href="contact.html">Book a consult</a>
-      <a class="btn btn--quiet" href="portfolio.html">See the work</a>
+      <a class="btn" href="contact.html">Book a free consultation</a>
+      <a class="btn btn--quiet" href="portfolio.html">See our projects</a>
     </div>
-
-    <figure class="hero__shot">
-      <img src="images/hero.jpg" alt="Living room staged with a low sofa, curved armchairs, and a linear fireplace, opening through folding glass doors to a valley view" width="1800" height="1200" fetchpriority="high" decoding="async">
-    </figure>
   </div>
+  <button class="hero__toggle" type="button" aria-pressed="false" aria-label="Pause background video" hidden>
+    <svg class="hero__icon hero__icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <svg class="hero__icon hero__icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.6v8.8a.5.5 0 0 0 .77.42l6.6-4.4a.5.5 0 0 0 0-.84l-6.6-4.4a.5.5 0 0 0-.77.42Z" fill="currentColor"/></svg>
+  </button>
 </section>
 
 <section class="sec">
@@ -91,13 +94,12 @@
         <span class="eyebrow">Why staging works</span>
         <h2 class="d2">Buyers decide in the first ninety seconds</h2>
         <p class="lead">Most of that decision happens before anyone reads the listing sheet. Staging controls what they notice first: light, flow, scale, and where a room invites them to stand.</p>
-        <p class="body">We work from the buyer profile for your price band, not from a catalogue. Every piece is chosen to make a room read larger, brighter, and easier to imagine living in — then photographed to carry that impression online, where the showing really begins.</p>
+        <p class="body">We start from your house and the people most likely to buy it, not from a standard furniture package. Every piece is chosen to make a room read larger, brighter, and easier to imagine living in — then photographed to carry that impression online, where the showing really begins.</p>
         <ul class="list">
           <li>Design plans built around your target buyer and comparables</li>
           <li>Owned inventory — no waiting on rental warehouses</li>
           <li>Photo-ready styling on your shoot day</li>
         </ul>
-        <p><a class="tlink" href="about.html">Meet the studio</a></p>
       </div>
       <div>
         <figure class="figure figure--wide">
@@ -121,7 +123,7 @@
         <span class="eyebrow">Living area</span>
         <h3 class="h3">The room that sells the house</h3>
         <p class="small">Rug, sofas, accent chairs, ottomans, coffee table, lamps, side tables, a tree, and the art that ties it together.</p>
-        <span class="item__price"><small>Range</small>$1,500&ndash;$2,200</span>
+        <span class="item__price"><small>Range</small>$1,050&ndash;$1,550</span>
         <a class="tlink" href="services.html#living">Full schedule</a>
       </article>
       <article class="item panel panel--paper">
@@ -139,65 +141,37 @@
         <a class="tlink" href="services.html#patio">Full schedule</a>
       </article>
     </div>
-    <p class="center small muted" style="margin-top:var(--sp-6)">Sixteen areas in all — a whole house runs $10,400&ndash;$15,700, a smaller listing nearer $4,000.</p>
+    <p class="center small muted" style="margin-top:var(--sp-6)">Twelve areas in all — your quote is the sum of the ones we agree on for your house.</p>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap wrap--wide">
-    <div class="tie">
-      <div class="head">
-        <span class="eyebrow">Recent work</span>
-        <h2 class="d2">Rooms that changed the offer</h2>
-      </div>
-      <a class="tlink" href="portfolio.html">All project galleries</a>
+    <div class="head head--center">
+      <span class="eyebrow">Recent projects</span>
+      <h2 class="d2">Every house, <em>its own look</em></h2>
     </div>
-    <div class="gallery" style="margin-top:var(--sp-8)">
+    <p class="body body--center center muted" style="margin-top:var(--sp-4)">A few rooms from recent listings in Kirkland, Clyde Hill, Bellevue, and Sammamish.</p>
+    <div class="gallery gallery--home" style="margin-top:var(--sp-8)">
       <figure class="shot shot--static">
         <div class="shot__img"><img src="images/projects/kirkland-15.jpg" alt="Living room staged by Top Staging And Design at the Kirkland project" loading="lazy" decoding="async" width="1200" height="801"></div>
-        <figcaption><b>Kirkland</b><span>Living room</span></figcaption>
+        <figcaption><b>Living room</b><span>Kirkland</span></figcaption>
       </figure>
       <figure class="shot shot--static">
         <div class="shot__img"><img src="images/projects/clydehill-03.jpg" alt="Kitchen staged by Top Staging And Design at the Clyde Hill project" loading="lazy" decoding="async" width="1200" height="801"></div>
-        <figcaption><b>Clyde Hill</b><span>Kitchen</span></figcaption>
+        <figcaption><b>Kitchen</b><span>Clyde Hill</span></figcaption>
       </figure>
       <figure class="shot shot--static">
-        <div class="shot__img"><img src="images/projects/bellevue-04.jpg" alt="Dining room staged by Top Staging And Design at the Bellevue project" loading="lazy" decoding="async" width="801" height="1200"></div>
-        <figcaption><b>Bellevue</b><span>Dining room</span></figcaption>
+        <div class="shot__img"><img src="images/projects/bellevue-15.jpg" alt="Dining room staged by Top Staging And Design at the Bellevue project" loading="lazy" decoding="async" width="1200" height="801"></div>
+        <figcaption><b>Dining room</b><span>Bellevue</span></figcaption>
       </figure>
       <figure class="shot shot--static">
         <div class="shot__img"><img src="images/projects/sammamish-08.jpg" alt="Primary bedroom staged by Top Staging And Design at the Sammamish project" loading="lazy" decoding="async" width="1200" height="800"></div>
-        <figcaption><b>Sammamish</b><span>Primary bedroom</span></figcaption>
+        <figcaption><b>Primary bedroom</b><span>Sammamish</span></figcaption>
       </figure>
     </div>
-  </div>
-</section>
-
-<section class="sec sec--oat">
-  <div class="wrap">
-    <figure class="pull">
-      <blockquote>&ldquo;We had three offers in the first weekend. It didn't look staged — it looked like the life buyers wanted to move into.&rdquo;</blockquote>
-      <figcaption><b>Jennifer &amp; Mark Thompson</b>Sold in 9 days · Clyde Hill</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="sec sec--half">
-  <div class="wrap">
-    <hr class="rule">
-    <div class="cols cols--3" style="margin-top:var(--sp-8)">
-      <figure class="quote">
-        <blockquote>&ldquo;I put every listing above a million through Top Staging now. Fast install, clean invoicing, and photos that look like a magazine.&rdquo;</blockquote>
-        <figcaption><b>David Johnson</b>Broker · Bellevue</figcaption>
-      </figure>
-      <figure class="quote">
-        <blockquote>&ldquo;Staging cost a fraction of the first price cut we were about to make — and we never had to make it.&rdquo;</blockquote>
-        <figcaption><b>Amanda Lee</b>Homeowner · Shoreline</figcaption>
-      </figure>
-      <figure class="quote">
-        <blockquote>&ldquo;Sat for two months unstaged. Relisted on the Friday, under contract in three weeks, above asking.&rdquo;</blockquote>
-        <figcaption><b>Jennifer &amp; Mark T.</b>Homeowners · Clyde Hill</figcaption>
-      </figure>
+    <div class="btns" style="margin-top:var(--sp-7);justify-content:center">
+      <a class="btn btn--quiet" href="portfolio.html">View all projects</a>
     </div>
   </div>
 </section>
@@ -209,7 +183,7 @@
     <h2 class="d2" style="margin-top:var(--sp-5)">A thirty-minute walkthrough, at no charge</h2>
     <p class="lead">We'll tell you which rooms are worth staging, which aren't, and what it costs — before you commit to anything.</p>
     <div class="btns">
-      <a class="btn" href="contact.html">Request a consult</a>
+      <a class="btn" href="contact.html">Book a free consultation</a>
       <a class="btn btn--quiet" href="services.html">See pricing</a>
     </div>
   </div>
@@ -226,9 +200,8 @@
       <div>
         <h3>Explore</h3>
         <ul>
-          <li><a href="about.html">Studio</a></li>
           <li><a href="services.html">Pricing</a></li>
-          <li><a href="portfolio.html">Work</a></li>
+          <li><a href="portfolio.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -237,7 +210,7 @@
         <ul>
           <li><a href="services.html#living">Living areas</a></li>
           <li><a href="services.html#primary">Primary suites</a></li>
-          <li><a href="services.html#kitchen">Kitchen &amp; baths</a></li>
+          <li><a href="services.html#kitchen">Kitchen</a></li>
           <li><a href="services.html#patio">Outdoor areas</a></li>
         </ul>
       </div>
@@ -245,8 +218,6 @@
         <h3>Get in touch</h3>
         <address>
           <a href="mailto:service@topstaginganddesign.com">service@topstaginganddesign.com</a>
-          <a href="tel:+15551234567">(555) 123-4567</a>
-          <span>Mon&ndash;Fri 9&ndash;6 &middot; Sat 10&ndash;4</span>
         </address>
       </div>
     </div>
