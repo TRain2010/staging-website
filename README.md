@@ -173,8 +173,11 @@ needed rotating. `PIL.ImageOps.exif_transpose()` handles it; without it they
 ship sideways. To swap a photograph, drop a new file into `images/projects/`
 and edit the matching `<button class="shot">` in `portfolio.html` — each one is
 self-contained. The wordmark is
-`images/logo.png`: the supplied artwork trimmed of its white margin and made
-transparent, so it sits on any background and inverts cleanly for dark mode.
+`images/logo-arch.png` (the refined arch: a half-circle over TOP STAGING with
+the STAGING · DESIGN · LUXE line), and `images/logo-arch-mark.png` is the same
+mark without that line. Both are transparent, drawn in ink, so they sit on any
+background and invert cleanly for dark mode. Images cache for a year, so a new
+logo gets a new filename rather than overwriting the old one.
 
 ## Deployment
 
